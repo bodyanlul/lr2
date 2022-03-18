@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Слайдер</title>
+    <link rel="stylesheet" href="simple-adaptive-slider.min.css">
+    <script defer src="simple-adaptive-slider.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // инициализация слайдера
+            var slider = new SimpleAdaptiveSlider('.slider', {
+                autoplay: true,
+                interval: 10000,
+            });
+        });
+    </script>
+    <style>
+        /* стили для элемента body */
+        
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        }
+        
+        .slider {
+            max-width: 800px;
+        }
+        
+        .slider__items {
+            counter-reset: slide;
+        }
+        
+        .slider__item {
+            position: relative;
+            counter-increment: slide;
+        }
+        
+        .slider__item::after {
+            content: counter(slide);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #fff;
+            font-style: italic;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .img-fluid {
+            display: inline-block;
+            height: auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slider__wrapper">
+            <div class="slider__items">
+                <div class="slider__item">
+                    <img class="img-fluid" src="img/1.jpg" width="800" height="400">
+                </div>
+                <div class="slider__item">
+                    <img class="img-fluid" src="img/2.jpeg" width="800" height="400">
+                </div>
+                <div class="slider__item">
+                    <img class="img-fluid" src="img/3.jpg" width="800" height="400">
+                </div>
+                <div class="slider__item">
+                    <img class="img-fluid" src="img/4.jpeg" width="800" height="400">
+                </div>
+            </div>
+        </div>
+        <a class="slider__control slider__control_prev" href="#" role="button" data-slide="prev"></a>
+        <a class="slider__control slider__control_next" href="#" role="button" data-slide="next"></a>
+    </div>
+</body>
+
+</html>

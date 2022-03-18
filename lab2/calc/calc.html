@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .header-bg {
+            text-align: center;
+        }
+        
+        .name-label {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14pt;
+        }
+        
+        .header-label {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14pt;
+            text-align: center;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Калькулятор</title>
+</head>
+
+<body>
+    <p><select name="type" autofocus>
+        <option value="none"hidden>Выберите тип вклада</option>
+        <option value = "long">Пополняемый</option>
+        <option value = "fast">Срочный</option>
+    </select></p>
+
+    <p><select name="lenght">
+        <option value="none"hidden>Выберите срок</option>
+        <option value = "6">6 месяцев</option>
+        <option value = "12">1 год</option>
+        <option value = "18">1.5 года</option>
+        <option value = "24">2 года</option>
+    </select></p>
+
+    <p><input type="text" size="40"></p>
+
+    <textarea name="result" cols="40" rows="3"></textarea>
+</body>
+
+</html>
