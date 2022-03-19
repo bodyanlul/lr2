@@ -4,7 +4,7 @@ function calculate()
     const time = array[0];
     const sum = parseInt(document.getElementById("sum").value);
     const percent = array[1];
-    var sumpercent = Math.round(sum+(sum*percent*time*30/365)/100);
+    var sumpercent = Math.round(sum+(sum*percent*time*30.417/365)/100);
     var total = "Вклад"+" на срок "+time+" месяцев на сумму "+sum+" руб.\n"+"В конце срока вы получите "+sumpercent+" руб.";
     document.getElementById("result").value=total
 }
