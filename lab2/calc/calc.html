@@ -7,7 +7,7 @@
             text-align: center;
         }
         
-        .name-label {
+        .h1 {
             font-family: 'Times New Roman', Times, serif;
             font-size: 14pt;
         }
@@ -20,26 +20,30 @@
     </style>
     <meta charset="utf-8">
     <title>Калькулятор</title>
+    <script defer src="calc.js"></script>
 </head>
 
 <body>
-    <p><select name="type" autofocus>
+    <h1><label>Тип вклада</label></h1>
+    <h1><select id="type" autofocus required onchange="switch_type();">
         <option value="none"hidden>Выберите тип вклада</option>
         <option value = "long">Пополняемый</option>
         <option value = "fast">Срочный</option>
-    </select></p>
-
-    <p><select name="lenght">
+    </select></h1>
+    <h1><label>Срок вклада</label></h1>
+    <h1><select id="time" required disabled>
         <option value="none"hidden>Выберите срок</option>
-        <option value = "6">6 месяцев</option>
-        <option value = "12">1 год</option>
-        <option value = "18">1.5 года</option>
-        <option value = "24">2 года</option>
-    </select></p>
-
-    <p><input type="text" size="40"></p>
-
-    <textarea name="result" cols="40" rows="3"></textarea>
+        <option value="3;20" visibility='hidden'>3 месяца</option>
+        <option value = "6;20">6 месяцев</option>
+        <option value = "9;23" visibility='hidden'>9 месяцев</option>
+        <option value = "12;22">1 год</option>
+        <option value = "18;15">1.5 года</option>
+        <option value = "24;10">2 года</option>
+    </select></h1>
+    <h1><label>Сумма</label></h1>
+    <h1><input id ="sum" type="text" size="40"></h1>
+    <h1><button id="btn" onclick="calculate();">Рассчитать</button></h1>
+    <h1><textarea id="result" cols="40" rows="3"></textarea></h1>
 </body>
 
 </html>
